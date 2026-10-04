@@ -81,10 +81,14 @@
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      var name = contactForm.name.value.trim();
-      var email = contactForm.email.value.trim();
-      var subject = contactForm.subject.value.trim();
-      var message = contactForm.message.value.trim();
+      var nameInput = contactForm.querySelector("#name");
+      var emailInput = contactForm.querySelector("#email");
+      var subjectInput = contactForm.querySelector("#subject");
+      var messageInput = contactForm.querySelector("#message");
+      var name = nameInput ? nameInput.value.trim() : "";
+      var email = emailInput ? emailInput.value.trim() : "";
+      var subject = subjectInput ? subjectInput.value.trim() : "";
+      var message = messageInput ? messageInput.value.trim() : "";
       var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!name || !email || !subject || !message) {
