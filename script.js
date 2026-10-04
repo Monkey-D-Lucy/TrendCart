@@ -1,8 +1,29 @@
 (function () {
+  var toastTimeout;
+
   function trackEvent(eventName, eventParams) {
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, eventParams || {});
     }
+  }
+
+  function showToast(message) {
+    var toast = document.getElementById("site-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "site-toast";
+      toast.className = "toast";
+      toast.setAttribute("aria-live", "polite");
+      document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(function () {
+      toast.classList.remove("show");
+    }, 2200);
   }
 
   var yearEl = document.getElementById("year");
@@ -21,11 +42,32 @@
     });
   });
 
+  var navToggles = document.querySelectorAll(".nav-toggle");
+  navToggles.forEach(function (toggle) {
+    var navWrap = toggle.closest(".nav-wrap");
+    var navLinks = navWrap ? navWrap.querySelector(".nav-links") : null;
+    if (!navLinks) {
+      return;
+    }
+
+    toggle.addEventListener("click", function () {
+      var isOpen = navLinks.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (navLink) {
+      navLink.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  });
+
   var productButtons = document.querySelectorAll(".js-product-btn");
   productButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       var productName = button.getAttribute("data-product-name") || "Unknown Product";
-      alert(productName + " selected. We'll share more details soon.");
+      showToast(productName + " selected. We'll share more details soon.");
       trackEvent("product_click", {
         product_name: productName
       });

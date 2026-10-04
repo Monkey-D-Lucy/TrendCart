@@ -73,6 +73,39 @@ a {
   color: var(--primary);
 }
 
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--primary);
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  max-width: 320px;
+  background: #0f172a;
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.26);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 0.96;
+  transform: translateY(0);
+}
+
 .hero {
   padding: 4rem 0 3rem;
 }
@@ -346,10 +379,30 @@ textarea:focus {
 
 @media (max-width: 640px) {
   .nav-wrap {
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.7rem;
+    flex-wrap: wrap;
+    min-height: auto;
     padding: 0.8rem 0;
+  }
+
+  .nav-toggle {
+    display: inline-grid;
+    place-items: center;
+    margin-left: auto;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 0.7rem;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .section-head {
