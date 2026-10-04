@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TrendCart helps you shop smarter with curated gadgets, accessories, and daily essentials at great prices.">
+  <title>TrendCart | Shop smarter. Live better.</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK514XMCZT"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GK514XMCZT');
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">TrendCart</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="primary-nav">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Welcome to TrendCart</p>
+          <h1>Shop smarter. Live better.</h1>
+          <p class="hero-copy">Discover premium tech accessories and modern essentials designed for your everyday lifestyle.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary js-cta" data-cta-name="hero_shop_now" href="products.html">Shop Now</a>
+            <a class="btn btn-secondary js-cta" data-cta-name="hero_contact_us" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-stat">
+            <span>50K+</span>
+            <p>Happy customers</p>
+          </div>
+          <div class="hero-stat">
+            <span>1,000+</span>
+            <p>Orders shipped weekly</p>
+          </div>
+          <div class="hero-stat">
+            <span>4.8/5</span>
+            <p>Average product rating</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Products</h2>
+          <a class="text-link" href="products.html">View all products</a>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-visual" aria-hidden="true">🎧</div>
+            <p class="product-category">Audio</p>
+            <h3>Wireless Earbuds</h3>
+            <p class="product-desc">Crisp sound, stable Bluetooth, and all-day comfort for music and calls.</p>
+            <p class="product-price">₹1,499</p>
+            <button class="btn btn-primary js-product-btn" data-product-name="Wireless Earbuds" type="button">View Product</button>
+          </article>
+          <article class="product-card">
+            <div class="product-visual" aria-hidden="true">⌚</div>
+            <p class="product-category">Wearables</p>
+            <h3>Smart Watch</h3>
+            <p class="product-desc">Track activity, notifications, and sleep with a sleek modern display.</p>
+            <p class="product-price">₹2,999</p>
+            <button class="btn btn-primary js-product-btn" data-product-name="Smart Watch" type="button">View Product</button>
+          </article>
+          <article class="product-card">
+            <div class="product-visual" aria-hidden="true">🔊</div>
+            <p class="product-category">Audio</p>
+            <h3>Portable Speaker</h3>
+            <p class="product-desc">Powerful bass and compact design for indoor and outdoor listening.</p>
+            <p class="product-price">₹1,999</p>
+            <button class="btn btn-primary js-product-btn" data-product-name="Portable Speaker" type="button">View Product</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Why Shop With TrendCart</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Curated Quality</h3>
+            <p>Every product is carefully selected to deliver value, reliability, and style.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Fast Delivery</h3>
+            <p>We ship quickly and securely so your essentials arrive right on time.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Trusted Support</h3>
+            <p>Our customer care team is always ready to help with your shopping journey.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <h2>Ready to upgrade your daily essentials?</h2>
+        <p>Browse all products and pick what fits your lifestyle best.</p>
+        <a class="btn btn-primary btn-large js-cta" data-cta-name="home_bottom_shop" href="products.html">Explore Products</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> TrendCart. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
